@@ -1,0 +1,61 @@
+i=100000
+#loop creating
+while(i>=0):
+    print("\n")
+    print( "*" * 40)
+    print("**welcome to SID bank**\n")
+    #take an input from user of enter on keyboard
+    j=input("press enter ")
+    #input for pin
+    n=int(input("please enter your pin number "))
+    print(" ")
+    if n==1234:
+        print("1.cash withdraw\n2.deposit amount")
+        print("for balance enquiry enter 1 \n")
+        #for cash withdraw and balance enquiry input 1 and for amount deposit input 2  
+        k=int(input("please select your option\n"))
+        
+        if k==1:
+            #input amount
+            d=int(input("please enter the amount in multiple of 100, for balance enquiry enter 00 amount\n"))
+            #if amount in multiple of 100
+            if d%100==0:
+                #amount should not exeed the available balance 
+                if d<=i:
+                    p=i-d
+                    print("available balance\n", p)
+                    print("\n")
+                    print("😊Thankyou for banking with us😊")#greeting
+                    i=i-d
+                    continue
+                else:
+                    print("insufficient balance\n")
+                    print("😊Thankyou for banking with us😊")
+                    continue   #continue the loop
+            else:
+                print("please enter amount in multiple of 100\n")
+                print("😊Thankyou for banking with us😊")
+                continue   
+
+            
+        elif k==2:
+            #input amount to be deposited 
+            s=int(input("please enter amount to be deposited\n"))
+            q=i+s
+            #check the available balance
+            print("available balance",q)
+            print("\n")
+            print("😊Thankyou for banking with us😊")
+            i=i+s
+            continue
+
+        else:
+            print("invalid input\n")
+            print("😊Thankyou for banking with us😊")
+
+    else:
+        #for wrong pin number
+        print("wrong pin number\nplease enter correct pin\ntry again\n")
+        print("😊Thankyou for banking with us😊")
+    
+
